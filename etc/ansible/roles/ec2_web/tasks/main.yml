@@ -1,0 +1,18 @@
+---
+# tasks file for ec2_web
+
+- name: Launch web target ec2 instance
+  ec2:
+          aws_access_key: "{{ access_key }}"
+          aws_secret_key: "{{ secret_key }}"
+          image: ami-0ebc1ac48dfd14136
+          instance_type: t2.micro          
+          count: 3
+          vpc_subnet_id: subnet-bdc3f3d5
+          assign_public_ip: yes
+          region: ap-south-1
+          instance_tags:
+                  name: targetweb
+          group_id: "sg-09f8fc848cf88fe67"
+          key_name: keyt
+          wait: yes

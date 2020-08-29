@@ -1,0 +1,7 @@
+- hosts: tag_name_targetweb
+  roles:
+          - websetup
+
+- hosts: tag_name_lbserver
+  roles:
+          - lbsetup
